@@ -434,14 +434,23 @@
       overflow: hidden;
       box-shadow: 0 16px 36px rgba(19, 43, 70, 0.14);
       border: 1px solid var(--line);
-      background: #edf3f8;
+      background:
+        radial-gradient(circle at 22% 16%, rgba(79,199,234,0.22), transparent 26%),
+        radial-gradient(circle at 78% 20%, rgba(255,123,77,0.16), transparent 24%),
+        linear-gradient(145deg, #e7f0f7 0%, #d9e7f0 48%, #eef5fa 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 310px;
+      padding: 28px 34px 18px;
     }
 
     .profile-photo img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      object-position: center;
+      width: min(82%, 300px);
+      max-height: 280px;
+      object-fit: contain;
+      object-position: center bottom;
+      border-radius: 18px;
     }
 
     .profile-stats {
@@ -523,6 +532,14 @@
       .nav a:not(.button-primary) { display: none; }
       .hero { padding: 58px 0 72px; }
       .hero-card, .card, .portfolio-body, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel, .signal-inner { padding: 22px; }
+      .profile-photo {
+        min-height: 260px;
+        padding: 24px 24px 16px;
+      }
+      .profile-photo img {
+        width: min(78%, 240px);
+        max-height: 230px;
+      }
       .hero-actions { display:grid; }
       .hero-actions .button { width: 100%; }
       .button { width: 100%; }
@@ -768,10 +785,10 @@
             </ul>
           </article>
           <aside class="contact-panel">
-            <strong class="serif">まずは現状ページを見せてください。</strong>
-            <p>公開中のLP、参考サイト、メモ書きのどれでも大丈夫です。改善余地と優先順位をテキストで整理します。</p>
-            <a class="button button-primary" href="mailto:tetsu4@gmail.com?subject=LP%E5%88%B6%E4%BD%9C%E3%83%BB%E8%A8%BA%E6%96%AD%E3%81%AE%E7%9B%B8%E8%AB%87">メールで無料診断を相談する</a>
-            <div class="contact-foot">フォーム導入前でも相談が始められるよう、メールリンクを設定しています。</div>
+            <strong class="serif">LPの構成案を無料で作ります。</strong>
+            <p>商品・サービス内容、ターゲット、参考サイトを送っていただければ、ファーストビュー、見出し構成、CTA導線の構成案をご提案します。</p>
+            <a class="button button-primary" href="mailto:tetsu4@gmail.com?subject=LP%E6%A7%8B%E6%88%90%E6%A1%88%E3%81%AE%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87">無料で構成案を相談する</a>
+            <div class="contact-foot">※無料提案は初回相談時の簡易構成案です。</div>
           </aside>
         </div>
       </div>
