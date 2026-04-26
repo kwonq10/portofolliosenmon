@@ -564,6 +564,55 @@
     .profile-stat strong { display:block; font-size: 30px; color: #ffd69f; margin-bottom: 8px; }
     .profile-stat span { color: rgba(255,255,255,0.8); font-size: 13px; }
 
+    .profile-detail {
+      padding: 24px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(239,245,251,0.96) 100%);
+    }
+
+    .profile-detail small {
+      display: block;
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .profile-detail strong {
+      display: block;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .profile-detail ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .profile-detail li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .profile-detail li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--cyan));
+    }
+
     .faq-item { padding: 24px 26px; }
     .faq-item summary { list-style:none; cursor:pointer; color: var(--navy); font-size: 17px; font-weight: 700; }
     .faq-item summary::-webkit-details-marker { display:none; }
@@ -866,6 +915,15 @@
               <small>Completion Rate</small>
               <strong>92%</strong>
               <span>途中で投げ出さず、最後まで伴走する姿勢を大切にしています。</span>
+            </div>
+            <div class="profile-detail">
+              <small>Support Scope</small>
+              <strong>構成整理から実装まで、途中で役割を切り分けず進められます。</strong>
+              <ul>
+                <li>訴求軸の整理と見出し構成の提案</li>
+                <li>スマホ表示を前提にしたLPデザイン調整</li>
+                <li>公開後に差し替えしやすい静的実装</li>
+              </ul>
             </div>
           </aside>
         </div>
