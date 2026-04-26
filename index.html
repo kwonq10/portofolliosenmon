@@ -338,6 +338,7 @@
     .cards-3, .portfolio-grid, .faq-grid, .flow-grid {
       display: grid;
       gap: 22px;
+      align-items: stretch;
     }
 
     .cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
@@ -354,6 +355,9 @@
     .card {
       padding: 28px;
       border-top: 4px solid var(--cyan);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .card h3 {
@@ -394,6 +398,9 @@
       padding: 26px 24px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .flow-card::after {
@@ -440,6 +447,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
 
     .portfolio-banner {
@@ -514,12 +522,17 @@
 
     .profile-wrap {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
       gap: 22px;
-      align-items: start;
+      align-items: stretch;
     }
 
-    .profile-card { padding: 32px; }
+    .profile-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
     .profile-card h3 { font-size: 34px; color: var(--navy); margin-bottom: 16px; }
     .profile-name { color: var(--cyan); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 10px; }
     .profile-card p { color: var(--muted); font-size: 14px; }
@@ -539,6 +552,7 @@
       justify-content: center;
       min-height: 310px;
       padding: 28px 34px 18px;
+      flex: 1;
     }
 
     .profile-photo img {
@@ -552,12 +566,17 @@
     .profile-stats {
       display: grid;
       gap: 14px;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
     }
 
     .profile-stat {
       padding: 22px 24px;
       background: linear-gradient(180deg, #102640 0%, #173a60 100%);
       color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
     }
 
     .profile-stat small { display:block; color: rgba(255,255,255,0.68); font-size: 11px; letter-spacing: .16em; margin-bottom: 10px; text-transform: uppercase; }
@@ -569,6 +588,12 @@
       border: 1px solid var(--line);
       background:
         linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(239,245,251,0.96) 100%);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
     }
 
     .profile-detail small {
@@ -613,7 +638,10 @@
       background: linear-gradient(135deg, var(--orange), var(--cyan));
     }
 
-    .faq-item { padding: 24px 26px; }
+    .faq-item {
+      padding: 24px 26px;
+      height: 100%;
+    }
     .faq-item summary { list-style:none; cursor:pointer; color: var(--navy); font-size: 17px; font-weight: 700; }
     .faq-item summary::-webkit-details-marker { display:none; }
     .faq-item p { margin-top: 14px; color: var(--muted); font-size: 14px; }
@@ -670,6 +698,10 @@
       }
 
       .signal { margin-top: 0; }
+
+      .profile-stats {
+        grid-template-rows: none;
+      }
     }
 
     @media (max-width: 720px) {
@@ -677,10 +709,11 @@
       .topbar-inner { min-height: 62px; }
       .nav a:not(.button-primary) { display: none; }
       .hero { padding: 58px 0 72px; }
-      .hero-card, .card, .portfolio-body, .faq-item, .profile-card, .profile-stat, .signal-inner { padding: 22px; }
+      .hero-card, .card, .portfolio-body, .faq-item, .profile-card, .profile-stat, .profile-detail, .signal-inner { padding: 22px; }
       .profile-photo {
         min-height: 260px;
         padding: 24px 24px 16px;
+        flex: initial;
       }
       .profile-photo img {
         width: min(78%, 240px);
