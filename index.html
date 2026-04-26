@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="訴求整理、SEOライティング、AI活用で問い合わせにつながるLPを制作。中谷健一のLP制作ポートフォリオです。">
+  <meta name="theme-color" content="#132b46">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="中谷健一 | 問い合わせにつながるLP制作">
+  <meta property="og:description" content="訴求整理、SEOライティング、AI活用で問い合わせにつながるLPを制作。中谷健一のLP制作ポートフォリオです。">
+  <meta property="og:image" content="images/profile-photo.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="中谷健一 | 問い合わせにつながるLP制作">
+  <meta name="twitter:description" content="訴求整理、SEOライティング、AI活用で問い合わせにつながるLPを制作。中谷健一のLP制作ポートフォリオです。">
+  <meta name="twitter:image" content="images/profile-photo.png">
   <title>中谷健一 | 問い合わせにつながるLP制作</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +49,29 @@
     }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(79, 199, 234, 0.45);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -56px;
+      z-index: 40;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: white;
+      color: var(--navy);
+      box-shadow: var(--shadow);
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
@@ -48,6 +81,11 @@
     .serif { font-family: 'Cormorant Garamond', serif; }
 
     .section { padding: 88px 0; }
+
+    .section-soft {
+      background:
+        linear-gradient(180deg, rgba(19, 43, 70, 0.03) 0%, rgba(255,255,255,0) 100%);
+    }
 
     .section-heading {
       max-width: 760px;
@@ -297,7 +335,7 @@
     .signal-lead span, .signal-cell span { color: var(--muted); font-size: 13px; }
     .signal-cell strong { display:block; color: var(--navy); font-size: 24px; margin-bottom: 6px; }
 
-    .cards-3, .portfolio-grid, .faq-grid {
+    .cards-3, .portfolio-grid, .faq-grid, .flow-grid {
       display: grid;
       gap: 22px;
     }
@@ -305,8 +343,9 @@
     .cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
     .portfolio-grid { grid-template-columns: repeat(2, minmax(0,1fr)); max-width: 980px; margin: 0 auto; }
     .faq-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .flow-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
 
-    .card, .portfolio-card, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel {
+    .card, .portfolio-card, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel, .flow-card {
       background: white;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow);
@@ -349,6 +388,50 @@
       height: 8px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--orange), var(--cyan));
+    }
+
+    .flow-card {
+      padding: 26px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flow-card::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      bottom: -28px;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,199,234,0.14), rgba(79,199,234,0));
+      pointer-events: none;
+    }
+
+    .flow-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--navy), #1f4b77);
+      color: white;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .flow-card h3 {
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+
+    .flow-card p {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .portfolio { background: linear-gradient(180deg, #eef5fb 0%, #f8fbff 100%); }
@@ -415,6 +498,19 @@
     }
 
     .portfolio-link { width: 100%; margin-top: auto; }
+
+    .portfolio-tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef5fb;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
 
     .profile-wrap, .contact-grid {
       display: grid;
@@ -502,6 +598,55 @@
     .contact-panel .button { width: 100%; }
     .contact-foot { margin-top: 14px; font-size: 12px; }
 
+    .contact-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-mail {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: revealUp .7s ease forwards;
+    }
+
+    .reveal-delay-1 { animation-delay: .08s; }
+    .reveal-delay-2 { animation-delay: .16s; }
+    .reveal-delay-3 { animation-delay: .24s; }
+
+    @keyframes revealUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button,
+      .portfolio-banner img,
+      .skip-link,
+      .reveal {
+        transition: none;
+        animation: none;
+        transform: none;
+        opacity: 1;
+      }
+    }
+
     footer {
       background: var(--navy-deep);
       color: rgba(255,255,255,0.55);
@@ -515,6 +660,7 @@
       .hero-inner,
       .signal-inner,
       .cards-3,
+      .flow-grid,
       .portfolio-grid,
       .faq-grid,
       .profile-wrap,
@@ -547,6 +693,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">コンテンツへスキップ</a>
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top">
@@ -555,16 +702,18 @@
       </a>
       <nav class="nav">
         <a href="#service">支援内容</a>
+        <a href="#flow">進め方</a>
         <a href="#portfolio">制作事例</a>
-        <a class="button button-primary" href="#contact">無料診断を相談する</a>
+        <a class="button button-primary" href="#contact">依頼前の確認事項</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
+    <div id="main-content"></div>
     <section class="hero">
       <div class="container hero-inner">
-        <div class="hero-copy">
+        <div class="hero-copy reveal">
           <div class="hero-badges">
             <span class="hero-badge">AI駆動で高速構築</span>
             <span class="hero-badge">SEOライティング知見</span>
@@ -587,12 +736,12 @@
             </div>
           </div>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">無料LP診断を相談する</a>
+            <a class="button button-primary" href="#contact">依頼前の確認事項を見る</a>
             <a class="button button-secondary" href="#portfolio">制作事例を見る</a>
           </div>
-          <p class="hero-note">強引な営業は行いません。まずはテキストベースの相談からで大丈夫です。</p>
+          <p class="hero-note">クラウドワークス上で内容確認いただく前提の、提案用ポートフォリオLPです。</p>
         </div>
-        <aside class="hero-card">
+        <aside class="hero-card reveal reveal-delay-1">
           <h2 class="serif">相談前に全部まとまっていなくても、前に進めます。</h2>
           <ul class="hero-list">
             <li>構成が曖昧でも、課題と強みの整理から一緒に進行</li>
@@ -663,6 +812,38 @@
       </div>
     </section>
 
+    <section class="section section-soft" id="flow">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Flow</span>
+          <h2>相談から公開まで、迷いが増えにくい進め方を取ります。</h2>
+          <p>初回相談の段階で情報が不足していても大丈夫です。ヒアリングから必要な整理を進めながら形にしていきます。</p>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-card">
+            <div class="flow-step">01</div>
+            <h3>現状と目的のヒアリング</h3>
+            <p>商品・サービスの特徴、今の集客課題、理想のお客様像を確認し、LPで解くべき論点を絞ります。</p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-step">02</div>
+            <h3>構成案と訴求軸の整理</h3>
+            <p>ファーストビュー、見出し順、CTAの置き方まで含めて、読み手が理解しやすい順番に再構成します。</p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-step">03</div>
+            <h3>デザインと実装の具体化</h3>
+            <p>AIで初速を上げつつ、案件ごとのトーンや密度に合わせて、見た目と情報量を人の判断で整えます。</p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-step">04</div>
+            <h3>スマホ調整と公開前チェック</h3>
+            <p>見切れ、余白、CTA直前の不安要素、FAQの不足などを点検し、公開後に直しやすい形で仕上げます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section portfolio" id="portfolio">
       <div class="container">
         <div class="section-heading">
@@ -676,6 +857,7 @@
               <img src="images/portfolio-food.jpg" alt="和の高級感を訴求した飲食店LPのバナー">
             </a>
             <div class="portfolio-body">
+              <span class="portfolio-tag">Restaurant Branding LP</span>
               <h3>高単価帯の和食・海鮮業態を想定したブランド訴求LP</h3>
               <p>高級感のある配色、余白設計、コピーの見せ方を通して、価格ではなく体験価値で選ばせることを意識したLPです。第一印象で世界観を伝えたい飲食ブランド向けの構成にしています。</p>
               <ul>
@@ -691,6 +873,7 @@
               <img src="images/portfolio-beauty.jpg" alt="やわらかな美容系トーンのLPバナー">
             </a>
             <div class="portfolio-body">
+              <span class="portfolio-tag">Beauty Care LP</span>
               <h3>美容機器・ケア商材を想定したやさしい訴求のLP</h3>
               <p>やわらかなトーンと清潔感のあるUIで不安を抑えつつ、機能理解から申込まで自然につなげる美容系LPです。女性向け商材で大切な安心感と上品さの両立を意識しています。</p>
               <ul>
@@ -705,7 +888,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="profile">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Profile</span>
@@ -738,7 +921,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="faq">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">FAQ</span>
@@ -770,13 +953,13 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Contact</span>
-          <h2>まずは、いま困っていることだけ教えてください。</h2>
-          <p>箇条書きでも大丈夫です。内容が固まっていなくても、相談しながら整理できます。</p>
+          <h2>依頼前に確認いただきたい内容をまとめています。</h2>
+          <p>クラウドワークス上でやり取りを進めやすくするため、共有いただけると助かる情報を整理しています。</p>
         </div>
         <div class="contact-grid">
           <article class="contact-card">
-            <h3>共有いただけると進みやすい内容</h3>
-            <p>全部そろっていなくても問題ありません。あるものだけで大丈夫です。</p>
+            <h3>共有いただけると進行がスムーズな内容</h3>
+            <p>最初から完璧にそろっていなくても問題ありません。分かる範囲だけでも共有いただければ進めやすくなります。</p>
             <ul class="contact-list">
               <li>何を売りたいLPか</li>
               <li>今の集客や問い合わせの課題</li>
@@ -785,10 +968,9 @@
             </ul>
           </article>
           <aside class="contact-panel">
-            <strong class="serif">LPの構成案を無料で作ります。</strong>
-            <p>商品・サービス内容、ターゲット、参考サイトを送っていただければ、ファーストビュー、見出し構成、CTA導線の構成案をご提案します。</p>
-            <a class="button button-primary" href="mailto:tetsu4@gmail.com?subject=LP%E6%A7%8B%E6%88%90%E6%A1%88%E3%81%AE%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87">無料で構成案を相談する</a>
-            <div class="contact-foot">※無料提案は初回相談時の簡易構成案です。</div>
+            <strong class="serif">クラウドワークス上でのご相談を前提にしています。</strong>
+            <p>このLPは営業用の無料相談導線ではなく、制作スタンスや事例、進め方を確認いただくためのポートフォリオです。ご依頼やご相談はクラウドワークスのメッセージからお送りください。</p>
+            <div class="contact-foot">必要に応じて、ヒアリング内容をもとに構成案や見出し整理のたたき台をご提案します。</div>
           </aside>
         </div>
       </div>
