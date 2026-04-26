@@ -345,7 +345,7 @@
     .faq-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .flow-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
 
-    .card, .portfolio-card, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel, .flow-card {
+    .card, .portfolio-card, .faq-item, .profile-card, .profile-stat, .flow-card {
       background: white;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow);
@@ -512,7 +512,7 @@
       letter-spacing: 0.06em;
     }
 
-    .profile-wrap, .contact-grid {
+    .profile-wrap {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
       gap: 22px;
@@ -569,54 +569,6 @@
     .faq-item summary::-webkit-details-marker { display:none; }
     .faq-item p { margin-top: 14px; color: var(--muted); font-size: 14px; }
 
-    .contact {
-      background:
-        radial-gradient(circle at 20% 18%, rgba(79,199,234,0.18), transparent 24%),
-        radial-gradient(circle at 82% 72%, rgba(255,123,77,0.16), transparent 20%),
-        linear-gradient(140deg, #091322 0%, #123151 100%);
-      color: white;
-    }
-
-    .contact .section-heading h2,
-    .contact .section-heading p { color: white; }
-
-    .contact-card, .contact-panel {
-      padding: 30px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: none;
-      backdrop-filter: blur(10px);
-    }
-
-    .contact-card h3, .contact-panel strong { color: white; }
-    .contact-card p, .contact-card li, .contact-panel p, .contact-foot { color: rgba(255,255,255,0.78); }
-    .contact-list { list-style:none; display:grid; gap:10px; margin-top: 16px; }
-    .contact-list li { position:relative; padding-left: 18px; font-size: 14px; }
-    .contact-list li::before { content:''; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; background:#ffd69f; }
-    .contact-panel strong { display:block; font-size: 30px; line-height:1.2; margin-bottom: 12px; }
-    .contact-panel p { font-size: 14px; margin-bottom: 20px; }
-    .contact-panel .button { width: 100%; }
-    .contact-foot { margin-top: 14px; font-size: 12px; }
-
-    .contact-actions {
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-mail {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      background: rgba(255,255,255,0.06);
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(18px);
@@ -664,7 +616,6 @@
       .portfolio-grid,
       .faq-grid,
       .profile-wrap,
-      .contact-grid,
       .hero-points {
         grid-template-columns: 1fr;
       }
@@ -677,7 +628,7 @@
       .topbar-inner { min-height: 62px; }
       .nav a:not(.button-primary) { display: none; }
       .hero { padding: 58px 0 72px; }
-      .hero-card, .card, .portfolio-body, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel, .signal-inner { padding: 22px; }
+      .hero-card, .card, .portfolio-body, .faq-item, .profile-card, .profile-stat, .signal-inner { padding: 22px; }
       .profile-photo {
         min-height: 260px;
         padding: 24px 24px 16px;
@@ -704,7 +655,7 @@
         <a href="#service">支援内容</a>
         <a href="#flow">進め方</a>
         <a href="#portfolio">制作事例</a>
-        <a class="button button-primary" href="#contact">依頼前の確認事項</a>
+        <a class="button button-primary" href="#flow">進め方を見る</a>
       </nav>
     </div>
   </header>
@@ -736,7 +687,7 @@
             </div>
           </div>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">依頼前の確認事項を見る</a>
+            <a class="button button-primary" href="#flow">進め方を見る</a>
             <a class="button button-secondary" href="#portfolio">制作事例を見る</a>
           </div>
           <p class="hero-note">クラウドワークス上で内容確認いただく前提の、提案用ポートフォリオLPです。</p>
@@ -949,32 +900,6 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Contact</span>
-          <h2>依頼前に確認いただきたい内容をまとめています。</h2>
-          <p>クラウドワークス上でやり取りを進めやすくするため、共有いただけると助かる情報を整理しています。</p>
-        </div>
-        <div class="contact-grid">
-          <article class="contact-card">
-            <h3>共有いただけると進行がスムーズな内容</h3>
-            <p>最初から完璧にそろっていなくても問題ありません。分かる範囲だけでも共有いただければ進めやすくなります。</p>
-            <ul class="contact-list">
-              <li>何を売りたいLPか</li>
-              <li>今の集客や問い合わせの課題</li>
-              <li>参考にしたいサイトや競合URL</li>
-              <li>希望する公開時期やざっくり予算感</li>
-            </ul>
-          </article>
-          <aside class="contact-panel">
-            <strong class="serif">クラウドワークス上でのご相談を前提にしています。</strong>
-            <p>このLPは営業用の無料相談導線ではなく、制作スタンスや事例、進め方を確認いただくためのポートフォリオです。ご依頼やご相談はクラウドワークスのメッセージからお送りください。</p>
-            <div class="contact-foot">必要に応じて、ヒアリング内容をもとに構成案や見出し整理のたたき台をご提案します。</div>
-          </aside>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
